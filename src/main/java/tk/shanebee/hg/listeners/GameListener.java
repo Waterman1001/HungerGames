@@ -440,8 +440,10 @@ public class GameListener implements Listener {
 					}
 				}
 			}
-		} else if (action == Action.LEFT_CLICK_AIR) {
+		}
+		if (action == Action.LEFT_CLICK_AIR) {
 			if (player.getInventory().getItemInMainHand().getType().equals(Material.STICK) && playerManager.hasPlayerData(player)) {
+				Bukkit.broadcastMessage(String.valueOf(playerManager.hasPlayerData(player)));
 				useTrackStick(player);
 			}
 		}

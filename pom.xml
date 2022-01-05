@@ -6,7 +6,7 @@
 
     <groupId>tk.shanebee.hg</groupId>
     <artifactId>HungerGames</artifactId>
-    <version>4.15.6</version>
+    <version>4.15.7-Waterman</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -29,11 +29,16 @@
         </repository>
         <repository>
             <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+            <url>https://nexus.hc.to/content/repositories/pub_releases</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>nexus</id>
+            <name>Lumine Releases</name>
+            <url>https://mvn.lumine.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -111,9 +116,8 @@
         <dependency>
             <groupId>io.lumine.xikage</groupId>
             <artifactId>MythicMobs</artifactId>
-            <version>4.6.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/MythicMobs-4.6.5.jar</systemPath>
+            <version>4.11.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
