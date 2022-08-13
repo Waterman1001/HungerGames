@@ -33,7 +33,8 @@ public enum PotionTypeUtils {
     WEAKNESS("WEAKNESS"),
     LUCK("LUCK"),
     TURTLE_MASTER("TURTLE_MASTER"),
-    SLOW_FALLING("SLOW_FALLING");
+    SLOW_FALLING("SLOW_FALLING"),
+    DARKNESS("DARKNESS");
 
     private final String bukkit;
     private static final Map<String, String> BY_NAME = new HashMap<>();

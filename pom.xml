@@ -6,11 +6,11 @@
 
     <groupId>tk.shanebee.hg</groupId>
     <artifactId>HungerGames</artifactId>
-    <version>4.15.7-Waterman</version>
+    <version>4.15.8-Waterman</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.18.1-R0.1-SNAPSHOT</version>
+            <version>1.19.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -74,10 +74,10 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.github.tr7zw.Item-NBT-API</groupId>
+            <groupId>de.tr7zw</groupId>
             <artifactId>item-nbt-api</artifactId>
             <!--suppress MavenModelInspection -->
-            <version>2.9.0</version>
+            <version>2.11.0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>*</groupId>
