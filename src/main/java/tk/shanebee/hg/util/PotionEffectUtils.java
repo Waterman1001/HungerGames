@@ -46,7 +46,9 @@ public enum PotionEffectUtils {
     DOLPHINS_GRACE("DOLPHINS_GRACE"),
     // 1.14
     BAD_OMEN("BAD_OMEN"),
-    HERO_OF_THE_VILLAGE("HERO_OF_THE_VILLAGE");
+    HERO_OF_THE_VILLAGE("HERO_OF_THE_VILLAGE"),
+    // 1.19
+    DARKNESS("DARKNESS");
 
     private final String bukkit;
     private static final Map<String, String> BY_NAME = new HashMap<>();
