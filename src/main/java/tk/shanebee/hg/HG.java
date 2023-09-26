@@ -1,8 +1,7 @@
 package tk.shanebee.hg;
 
-import io.lumine.xikage.mythicmobs.MythicMobs;
-import io.lumine.xikage.mythicmobs.mobs.MobManager;
-import io.papermc.lib.PaperLib;
+import io.lumine.mythic.bukkit.MythicBukkit;
+import io.lumine.mythic.core.mobs.MobExecutor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
@@ -49,7 +48,7 @@ public class HG extends JavaPlugin {
 	private ItemStackManager itemStackManager;
 	private Leaderboard leaderboard;
 	private Metrics metrics;
-	private MobManager mmMobManager;
+	private MobExecutor mmMobManager;
 
 	//Mobs
 	private MobConfig mobConfig;
@@ -91,7 +90,7 @@ public class HG extends JavaPlugin {
 
 		//MythicMob check
 		if (Bukkit.getPluginManager().getPlugin("MythicMobs") != null) {
-			mmMobManager = MythicMobs.inst().getMobManager();
+			mmMobManager = MythicBukkit.inst().getMobManager();
 			Util.log("&7MythicMobs found, MythicMobs hook &aenabled");
 		} else {
 			Util.log("&7MythicMobs not found, MythicMobs hooks have been &cdisabled");
@@ -390,10 +389,12 @@ public class HG extends JavaPlugin {
 		return this.metrics;
 	}
 
-	/** Get an instance of the MythicMobs MobManager
+	/**
+	 * Get an instance of the MythicMobs MobManager
+	 *
 	 * @return MythicMobs MobManager
 	 */
-	public MobManager getMmMobManager() {
+	public MobExecutor getMmMobManager() {
 		return this.mmMobManager;
 	}
 

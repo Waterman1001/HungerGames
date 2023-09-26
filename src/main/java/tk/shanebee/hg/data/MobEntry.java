@@ -1,8 +1,8 @@
 package tk.shanebee.hg.data;
 
-import io.lumine.xikage.mythicmobs.adapters.bukkit.BukkitAdapter;
-import io.lumine.xikage.mythicmobs.mobs.ActiveMob;
-import io.lumine.xikage.mythicmobs.mobs.MythicMob;
+import io.lumine.mythic.api.mobs.MythicMob;
+import io.lumine.mythic.bukkit.BukkitAdapter;
+import io.lumine.mythic.core.mobs.ActiveMob;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -239,7 +239,7 @@ public class MobEntry {
                 }
             });
 		} else {
-			MythicMob mob = HG.getPlugin().getMmMobManager().getMythicMob(mythicMob);
+			MythicMob mob = HG.getPlugin().getMmMobManager().getMythicMob(mythicMob).orElse(null);
 			ActiveMob activeMob = mob.spawn(BukkitAdapter.adapt(location), mythicLevel);
 			if (deathMessage != null) {
 				activeMob.getEntity().getBukkitEntity().setMetadata("death-message", new FixedMetadataValue(HG.getPlugin(), deathMessage));
