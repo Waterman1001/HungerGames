@@ -9,8 +9,8 @@
     <version>4.15.9-Waterman</version>
 
     <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -46,19 +46,19 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <version>1.20.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.papermc</groupId>
             <artifactId>paperlib</artifactId>
-            <version>1.0.6</version>
+            <version>1.0.8</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.10.4</version>
+            <version>2.11.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -77,7 +77,7 @@
             <groupId>de.tr7zw</groupId>
             <artifactId>item-nbt-api</artifactId>
             <!--suppress MavenModelInspection -->
-            <version>2.11.2-SNAPSHOT</version>
+            <version>2.12.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>*</groupId>
@@ -114,9 +114,9 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>io.lumine.xikage</groupId>
-            <artifactId>MythicMobs</artifactId>
-            <version>4.12.0</version>
+            <groupId>io.lumine</groupId>
+            <artifactId>Mythic-Dist</artifactId>
+            <version>5.3.5</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -129,10 +129,10 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
-                        <version>3.2.0</version>
+                        <version>3.3.0</version>
                         <configuration>
                             <!-- Put here wherever you would like the plugin to build -->
-                            <outputDirectory>/Users/ShaneBee/Desktop/Server/1-16-HG-TEST/plugins</outputDirectory>
+                            <outputDirectory>/Users/ShaneBee/Desktop/Server/1-20-HG-TEST/plugins</outputDirectory>
                         </configuration>
                     </plugin>
                 </plugins>
