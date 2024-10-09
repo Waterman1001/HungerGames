@@ -1,9 +1,11 @@
 package tk.shanebee.hg.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +50,14 @@ public enum PotionEffectUtils {
     BAD_OMEN("BAD_OMEN"),
     HERO_OF_THE_VILLAGE("HERO_OF_THE_VILLAGE"),
     // 1.19
-    DARKNESS("DARKNESS");
+    DARKNESS("DARKNESS"),
+    // 1.21
+    WIND_CHARGED("WIND_CHARGED"),
+    WEAVING("WEAVING"),
+    OOZING("OOZING"),
+    INFESTED("INFESTED"),
+    TRIAL_OMEN("TRIAL_OMEN"),
+    RAID_OMEN("RAID_OMEN");
 
     private final String bukkit;
     private static final Map<String, String> BY_NAME = new HashMap<>();
@@ -62,7 +71,7 @@ public enum PotionEffectUtils {
             BY_NAME.put(p.name(), p.bukkit);
         }
         for (PotionEffectType value : PotionEffectType.values()) {
-            if (!BY_NAME.containsValue(value.getName())) {
+            if (!BY_NAME.containsValue(value.getName().replace("minecraft:", "").toUpperCase())) {
                 Util.warning("Missing PotionEffectType for '&7" + value + "&e' please let dev know.");
             }
         }

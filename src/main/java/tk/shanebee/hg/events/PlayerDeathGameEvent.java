@@ -1,5 +1,7 @@
 package tk.shanebee.hg.events;
 
+import org.bukkit.damage.DamageSource;
+import org.bukkit.damage.DamageType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -19,7 +21,7 @@ public class PlayerDeathGameEvent extends PlayerDeathEvent {
     private final Game game;
 
     public PlayerDeathGameEvent(@NotNull Player player, @Nullable String deathMessage, @NotNull Game game) {
-        super(player, Collections.emptyList(), 0, deathMessage);
+        super(player, DamageSource.builder(DamageType.GENERIC).build(), Collections.emptyList(), 0, deathMessage);
         this.game = game;
     }
 

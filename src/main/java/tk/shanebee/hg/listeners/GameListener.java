@@ -8,6 +8,8 @@ import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.damage.DamageSource;
+import org.bukkit.damage.DamageType;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
@@ -259,7 +261,7 @@ public class GameListener implements Listener {
 			PlayerDeathGameEvent event = new PlayerDeathGameEvent(player, deathString, game);
 			Bukkit.getPluginManager().callEvent(event);
 			// Call bukkit player death event so other plugins can pick up on that too
-			PlayerDeathEvent playerDeathEvent = new PlayerDeathEvent(player, Collections.emptyList(), 0, deathString);
+			PlayerDeathEvent playerDeathEvent = new PlayerDeathEvent(player, DamageSource.builder(DamageType.GENERIC).build(), Collections.emptyList(), 0, deathString);
 			Bukkit.getPluginManager().callEvent(playerDeathEvent);
 
 			Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> checkStick(game), 40L);
