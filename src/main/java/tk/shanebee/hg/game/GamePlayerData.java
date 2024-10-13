@@ -6,6 +6,7 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
@@ -141,7 +142,7 @@ public class GamePlayerData extends Data {
         // Change to Adventure mode instead of Survival, to prevent moving by breaking blocks which get cancelled breaking before the game starts.
         // In order to make the gamemode switch work with Multiverse as well, only change it 2 ticks later.
         Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> player.setGameMode(GameMode.ADVENTURE), 2l);
-        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 23423525, -10, false, false));
+        player.getAttribute(Attribute.GENERIC_JUMP_STRENGTH).setBaseValue(0);
         player.setWalkSpeed(0.0001F);
         player.setFoodLevel(1);
         player.setAllowFlight(false);
@@ -156,7 +157,7 @@ public class GamePlayerData extends Data {
      */
     public void unFreeze(Player player) {
         player.setGameMode(GameMode.SURVIVAL); //Change back to Survival Mode.
-        player.removePotionEffect(PotionEffectType.JUMP_BOOST);
+        player.getAttribute(Attribute.GENERIC_JUMP_STRENGTH).setBaseValue(player.getAttribute(Attribute.GENERIC_JUMP_STRENGTH).getDefaultValue());
         player.setWalkSpeed(0.2F);
     }
 
